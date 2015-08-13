@@ -1,0 +1,108 @@
+﻿#Site {
+    margin: 0 auto;
+}
+
+#Logo{
+   margin: 0;
+   text-align:center;
+   background: #1f567d;
+}
+    #Logo h1{
+        margin-top: 0px;
+        padding-top: 20px;
+        margin-bottom: 0px;
+        color: white;
+    }
+    #Logo h4 {
+        margin-bottom: 0px;
+        padding-bottom: 30px;
+        margin-top: 0px;
+        color: white;
+    }
+
+
+/*Navigatie balk*/
+#Nav {
+    font-weight: bold;
+    line-height: 35px;
+    background-color: #1f567d;
+}
+
+    #Nav ul {
+        list-style: none;
+        text-align:center;
+        margin: 0;
+    }
+    #Nav li {
+        display:inline-block;
+        background-color: #1f567d;
+        margin-left: -5px;
+    }
+        #Nav li a {
+            color: white;
+            display: block;
+            width: 200px;
+            text-decoration: none;
+        }
+    #Nav li:hover {
+        background: white !important;
+        border-radius: 10px 10px 0px 0px !important;
+    }
+        #Nav li:hover a{
+            color: black !important;
+        }
+
+/*This hapens when there is another tab hovered than the current page tab */
+.Hoofd:hover > .Active {
+    background: #0074c2 !important;
+}
+    .Hoofd:hover > .Active a{
+        color : white !important ;
+    }
+
+/*Start with Active UL "selected" -> So white background and border radiuses*/
+.Active {
+    background: white !important;
+    border-radius: 10px 10px 0px 0px !important;
+}
+/*Active starts with white background so color should be black!*/
+    .Active a       
+    {
+        color: black !important;
+    }
+
+
+body {
+    font-family: 'Century Gothic';
+    background-color: #ededed;
+    color: black;
+    margin: 0;
+}
+
+#text {
+    background: white;
+    border-radius: 0px 0px 12px 12px;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 40px;
+    width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+}
+    #text p {
+        padding-top: 15px;
+        clear: left;
+    }
+
+
+#footer {
+    margin: 0 auto;
+    width: 1020px;
+    padding-top: 20px;
+    padding-left: 10px;
+    background-color: #ededed
+}
+
+/*Afbeeldingen*/
