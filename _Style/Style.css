@@ -32,6 +32,7 @@
         list-style: none;
         text-align:center;
         margin: 0;
+        padding: 0;
     }
     #Nav li {
         display:inline-block;
@@ -41,7 +42,7 @@
         #Nav li a {
             color: white;
             display: block;
-            width: 200px;
+            width: 150px;
             text-decoration: none;
         }
     #Nav li:hover {
@@ -79,30 +80,36 @@ body {
     margin: 0;
 }
 
+#content{
+    width:65%;
+    margin:0 auto;
+}
+
 #text {
     background: white;
     border-radius: 0px 0px 12px 12px;
     height: auto;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-    padding-right: 40px;
-    width: 1020px;
+    padding-right: 20px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
-    #text p {
-        padding-top: 15px;
-        clear: left;
-    }
+
 
 
 #footer {
-    margin: 0 auto;
-    width: 1020px;
-    padding-top: 20px;
-    padding-left: 10px;
-    background-color: #ededed
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 12px 12px 12px 12px;
 }
 
 /*Afbeeldingen*/
