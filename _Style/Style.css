@@ -106,3 +106,61 @@ body {
 }
 
 /*Afbeeldingen*/
+
+/*Slideshow*/
+#SlideShow {
+   border: 5px solid #eaeaea;
+   box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+   height: 395px;
+   width: 650px;
+   margin: 40px auto 0;
+   overflow: visible;
+   position: relative;
+}
+
+.SlideImage {
+    position: absolute;
+    opacity: 0;
+    -webkit-animation: round 16s infinite;
+    animation: round 16s infinite;
+}
+
+@-webkit-keyframes round {
+    25% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+}
+
+@keyframes round {
+    25% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+}
+
+#SlideShow #FirstImage {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+#SlideShow #SecondImage {
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+
+#SlideShow #ThirdImage  {
+    -webkit-animation-delay: 8s;
+    animation-delay: 8s;
+}
+
+#SlideShow #FourthImage {
+    -webkit-animation-delay: 12s;
+    animation-delay: 12s;
+}
