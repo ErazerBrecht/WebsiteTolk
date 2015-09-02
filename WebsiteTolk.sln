@@ -7,21 +7,21 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebsiteTolk", ".", "{04F515
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_24081"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Dropbox\WebsiteTolk\"
+		Debug.AspNetCompiler.PhysicalPath = "..\WebsiteTolk\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_24081\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_24081"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\Dropbox\WebsiteTolk\"
+		Release.AspNetCompiler.PhysicalPath = "..\WebsiteTolk\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_24081\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "24081"
-		SlnRelativePath = "..\..\..\..\..\Dropbox\WebsiteTolk\"
+		SlnRelativePath = "..\WebsiteTolk\"
 	EndProjectSection
 EndProject
 Global
