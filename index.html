@@ -40,7 +40,9 @@
         <div id="content">
             <div id="text">
                 <h1>Titel</h1>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod tellus lobortis consectetur laoreet. Nulla a lacinia est. Suspendisse bibendum luctus felis, vel ullamcorper risus. Nullam ultricies nisl et hendrerit porttitor. Cras lobortis quis ipsum sit amet tempor. Vestibulum feugiat velit id aliquam facilisis. Praesent vel augue nec nibh laoreet elementum. Curabitur posuere tortor odio. Maecenas dictum efficitur fringilla. Pellentesque tincidunt nunc ac massa euismod fringilla. Nulla facilisi. Morbi aliquet eget elit quis fermentum. Aliquam dignissim iaculis lectus quis mattis. Quisque eleifend sapien at ligula cursus, vulputate pharetra enim volutpat.
+                <div id="test">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod tellus lobortis consectetur laoreet. Nulla a lacinia est. Suspendisse bibendum luctus felis, vel ullamcorper risus. Nullam ultricies nisl et hendrerit porttitor. Cras lobortis quis ipsum sit amet tempor. Vestibulum feugiat velit id aliquam facilisis. Praesent vel augue nec nibh laoreet elementum. Curabitur posuere tortor odio. Maecenas dictum efficitur fringilla. Pellentesque tincidunt nunc ac massa euismod fringilla. Nulla facilisi. Morbi aliquet eget elit quis fermentum. Aliquam dignissim iaculis lectus quis mattis. Quisque eleifend sapien at ligula cursus, vulputate pharetra enim volutpat.
+                </div>
                 <div id="slides">
                     <img src="_media/Home1.jpg" />
                     <img src="_media/Home2.jpg" />
@@ -74,13 +76,30 @@
                 }
             });
         });
+
+        //Needs to go to a seperate file
         $(document).ready(function (e) {
-            try {
-                $("body select").msDropDown();
-            } catch (e) {
-                alert(e.message);
+
+            $("body select").msDropDown();
+
+            $("body select").change(function () {
+                document.cookie = $(this).val();
+                ReloadContent();
+            });
+
+            $("#language select").val(document.cookie).change();
+
+            function ReloadContent() {
+                if (document.cookie == "Dutch")
+                    $("#test").html("You selected Dutch");
+                else if (document.cookie == "English")
+                    $("#test").html("You selected English");
+                else if (document.cookie == "Russian")
+                    $("#test").html("You selected Russian");
             }
         });
+
+
     </script>
 </body>
 </html>
