@@ -3,8 +3,11 @@
 <head>
     <title>Brecht Carlier</title>
     <link href="_Style/Style.css" rel="stylesheet" type="text/css" />
+    <link href="_Style/Slideshow.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="_js/jquery.slides.min.js"></script>
     <div id="Site">
         <div id="Logo">
             <h1>Mennes</h1>
@@ -36,11 +39,13 @@
             <div id="text">
                 <h1>Titel</h1>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod tellus lobortis consectetur laoreet. Nulla a lacinia est. Suspendisse bibendum luctus felis, vel ullamcorper risus. Nullam ultricies nisl et hendrerit porttitor. Cras lobortis quis ipsum sit amet tempor. Vestibulum feugiat velit id aliquam facilisis. Praesent vel augue nec nibh laoreet elementum. Curabitur posuere tortor odio. Maecenas dictum efficitur fringilla. Pellentesque tincidunt nunc ac massa euismod fringilla. Nulla facilisi. Morbi aliquet eget elit quis fermentum. Aliquam dignissim iaculis lectus quis mattis. Quisque eleifend sapien at ligula cursus, vulputate pharetra enim volutpat.
-                <div id="SlideShow">
-                        <img class="SlideImage" id="FirstImage" src="_Media/Home1.jpg" />
-                        <img class="SlideImage" id="SecondImage" src="_Media/Home2.jpg" />
-                        <img class="SlideImage" id="ThirdImage"  src="_Media/Home3.jpg" />
-                        <img class="SlideImage" id="FourthImage" src="_Media/Home4.jpg"/>
+                <div class="container">
+                    <div id="slides">
+                        <img src="_Media/Home1.jpg" />
+                        <img src="_Media/Home2.jpg" />
+                        <img src="_Media/Home3.jpg" />
+                        <img src="_Media/Home4.jpg" />
+                    </div>
                 </div>
             </div>
             <div id="footer">
@@ -48,5 +53,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+    $(function() {
+        $('#slides').slidesjs({
+            width: 650,
+            height: 395,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+    </script>
 </body>
 </html>
