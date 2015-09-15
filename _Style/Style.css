@@ -2,17 +2,19 @@
     margin: 0 auto;
 }
 
-#Logo{
-   margin: 0;
-   text-align:center;
-   background: #1f567d;
+#Logo {
+    margin: 0;
+    text-align: center;
+    background: #1f567d;
 }
-    #Logo h1{
+
+    #Logo h1 {
         margin-top: 0px;
         padding-top: 20px;
         margin-bottom: 0px;
         color: white;
     }
+
     #Logo h4 {
         margin-bottom: 0px;
         padding-bottom: 30px;
@@ -30,35 +32,40 @@
 
     #Nav ul {
         list-style: none;
-        text-align:center;
+        text-align: center;
         margin: 0;
         padding: 0;
     }
+
     #Nav li {
-        display:inline-block;
+        display: inline-block;
         background-color: #1f567d;
         margin-left: -5px;
     }
+
         #Nav li a {
             color: white;
             display: block;
             width: 150px;
             text-decoration: none;
         }
-    #Nav li:hover {
-        background: white !important;
-        border-radius: 10px 10px 0px 0px !important;
-    }
-        #Nav li:hover a{
-            color: black !important;
+
+        #Nav li:hover {
+            background: white !important;
+            border-radius: 10px 10px 0px 0px !important;
         }
+
+            #Nav li:hover a {
+                color: black !important;
+            }
 
 /*This hapens when there is another tab hovered than the current page tab */
 .Hoofd:hover > .Active {
     background: #0074c2 !important;
 }
-    .Hoofd:hover > .Active a{
-        color : white !important ;
+
+    .Hoofd:hover > .Active a {
+        color: white !important;
     }
 
 /*Start with Active UL "selected" -> So white background and border radiuses*/
@@ -66,9 +73,8 @@
     background: white !important;
     border-radius: 10px 10px 0px 0px !important;
 }
-/*Active starts with white background so color should be black!*/
-    .Active a       
-    {
+    /*Active starts with white background so color should be black!*/
+    .Active a {
         color: black !important;
     }
 
@@ -80,9 +86,9 @@ body {
     margin: 0;
 }
 
-#content{
-    width:65%;
-    margin:0 auto;
+#content {
+    width: 65%;
+    margin: 0 auto;
 }
 
 #text {
@@ -110,17 +116,28 @@ body {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 12px 12px 12px 12px;
+    line-height: 33px;
 }
 
-#language{
-    width : 150px;
+#footer span
+{
+      vertical-align: middle;
+      line-height: normal; 
 }
+
+#language {
+    vertical-align: middle;
+    float : right;
+}
+
+    #language select {
+        width: 150px;
+    }
 
 /*Afbeeldingen*/
 
 /*Slideshow*/
-#slides
-{
+#slides {
     width: 660px;
     max-width: 100%;
     margin: 0 auto;
