@@ -118,15 +118,19 @@ body {
 #SlideShow {
    border: 5px solid #eaeaea;
    box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-   height: 395px;
    width: 650px;
+   max-width : 100%;
    margin: 40px auto 0;
    overflow: visible;
    position: relative;
+   padding: 0;
 }
 
 .SlideImage {
+    margin: 0;
     position: absolute;
+    width : 100%;
+    top: 0;
     opacity: 0;
     -webkit-animation: round 16s infinite;
     animation: round 16s infinite;
@@ -155,6 +159,7 @@ body {
 #SlideShow #FirstImage {
     -webkit-animation-delay: 0s;
     animation-delay: 0s;
+    position : relative;
 }
 
 #SlideShow #SecondImage {
