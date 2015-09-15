@@ -31,7 +31,7 @@ a.slidesjs-next,
 a.slidesjs-previous,
 a.slidesjs-play,
 a.slidesjs-stop {
-background-image: url(../_Media/btns-next-prev.png);
+background-image: url(../_media/btns-next-prev.png);
 background-repeat: no-repeat;
 display:block;
 width:12px;
@@ -93,7 +93,7 @@ display: block;
 width: 13px;
 height: 0;
 padding-top: 13px;
-background-image: url(../_Media/pagination.png);
+background-image: url(../_media/pagination.png);
 background-position: 0 0;
 float: left;
 overflow: hidden;
