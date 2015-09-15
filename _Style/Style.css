@@ -115,26 +115,15 @@ body {
 /*Afbeeldingen*/
 
 /*Slideshow*/
-#SlideShow {
-   border: 5px solid #eaeaea;
-   box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-   width: 650px;
-   max-width : 100%;
-   margin: 40px auto 0;
-   overflow: visible;
-   position: relative;
-   padding: 0;
+#slides
+{
+    width: 660px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 15px;
 }
 
-.SlideImage {
-    margin: 0;
-    position: absolute;
-    width : 100%;
-    top: 0;
-    opacity: 0;
-    -webkit-animation: round 16s infinite;
-    animation: round 16s infinite;
-}
+
 
 @-webkit-keyframes round {
     25% {
