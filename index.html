@@ -4,10 +4,12 @@
     <title>Brecht Carlier</title>
     <link href="_Style/Style.css" rel="stylesheet" type="text/css" />
     <link href="_Style/Slideshow.css" rel="stylesheet" type="text/css" />
+    <link href="_Style/dd.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="_js/jquery.slides.min.js"></script>
+    <script src="_js/jquery.dd.min.js"></script>
     <div id="Site">
         <div id="Logo">
             <h1>Mennes</h1>
@@ -38,16 +40,25 @@
         <div id="content">
             <div id="text">
                 <h1>Titel</h1>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod tellus lobortis consectetur laoreet. Nulla a lacinia est. Suspendisse bibendum luctus felis, vel ullamcorper risus. Nullam ultricies nisl et hendrerit porttitor. Cras lobortis quis ipsum sit amet tempor. Vestibulum feugiat velit id aliquam facilisis. Praesent vel augue nec nibh laoreet elementum. Curabitur posuere tortor odio. Maecenas dictum efficitur fringilla. Pellentesque tincidunt nunc ac massa euismod fringilla. Nulla facilisi. Morbi aliquet eget elit quis fermentum. Aliquam dignissim iaculis lectus quis mattis. Quisque eleifend sapien at ligula cursus, vulputate pharetra enim volutpat.
+                <div id="test">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod tellus lobortis consectetur laoreet. Nulla a lacinia est. Suspendisse bibendum luctus felis, vel ullamcorper risus. Nullam ultricies nisl et hendrerit porttitor. Cras lobortis quis ipsum sit amet tempor. Vestibulum feugiat velit id aliquam facilisis. Praesent vel augue nec nibh laoreet elementum. Curabitur posuere tortor odio. Maecenas dictum efficitur fringilla. Pellentesque tincidunt nunc ac massa euismod fringilla. Nulla facilisi. Morbi aliquet eget elit quis fermentum. Aliquam dignissim iaculis lectus quis mattis. Quisque eleifend sapien at ligula cursus, vulputate pharetra enim volutpat.
+                </div>
                 <div id="slides">
-                    <img src="_Media/Home1.jpg" />
-                    <img src="_Media/Home2.jpg" />
-                    <img src="_Media/Home3.jpg" />
-                    <img src="_Media/Home4.jpg" />
+                    <img src="_media/Home1.jpg" />
+                    <img src="_media/Home2.jpg" />
+                    <img src="_media/Home3.jpg" />
+                    <img src="_media/Home4.jpg" />
                 </div>
             </div>
             <div id="footer">
-                &copy; Mennes &nbsp; &nbsp; &nbsp;2015 &nbsp; &nbsp; &nbsp;
+                <span>&copy; Mennes &nbsp; &nbsp; &nbsp;2015 &nbsp; &nbsp; &nbsp;</span>
+                <div id="language">
+                    <select>
+                        <option value="English" data-image="_media/flags/gb.png">English</option>
+                        <option value="Dutch" data-image="_media/flags/be.png">Dutch</option>
+                        <option value="Russian" data-image="_media/flags/ru.png">Russian</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
@@ -65,6 +76,30 @@
                 }
             });
         });
+
+        //Needs to go to a seperate file
+        $(document).ready(function (e) {
+
+            $("body select").msDropDown();
+
+            $("body select").change(function () {
+                document.cookie = $(this).val();
+                ReloadContent();
+            });
+
+            $("#language select").val(document.cookie).change();
+
+            function ReloadContent() {
+                if (document.cookie == "Dutch")
+                    $("#test").html("You selected Dutch");
+                else if (document.cookie == "English")
+                    $("#test").html("You selected English");
+                else if (document.cookie == "Russian")
+                    $("#test").html("You selected Russian");
+            }
+        });
+
+
     </script>
 </body>
 </html>
