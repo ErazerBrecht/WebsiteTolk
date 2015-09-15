@@ -4,10 +4,12 @@
     <title>Brecht Carlier</title>
     <link href="_Style/Style.css" rel="stylesheet" type="text/css" />
     <link href="_Style/Slideshow.css" rel="stylesheet" type="text/css" />
+    <link href="_Style/dd.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="_js/jquery.slides.min.js"></script>
+    <script src="_js/jquery.dd.min.js"></script>
     <div id="Site">
         <div id="Logo">
             <h1>Mennes</h1>
@@ -48,6 +50,9 @@
             </div>
             <div id="footer">
                 &copy; Mennes &nbsp; &nbsp; &nbsp;2015 &nbsp; &nbsp; &nbsp;
+                <select id="language">
+                    <option value="Dutch" data-image="_Media/flags/be.png">Dutch</option>
+                </select>
             </div>
         </div>
     </div>
@@ -64,6 +69,13 @@
                     swap: true
                 }
             });
+        });
+        $(document).ready(function (e) {
+            try {
+                $("body select").msDropDown();
+            } catch (e) {
+                alert(e.message);
+            }
         });
     </script>
 </body>
