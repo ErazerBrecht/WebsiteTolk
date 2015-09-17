@@ -86,31 +86,43 @@
             $("#language select").msDropDown();
 
             $("#language select").change(function () {
-                setCookie($(this).val(), 31);
+                setCookie("language", $(this).val(), 31);
                 ReloadContent();
             });
 
-            $("#language select").val(document.cookie).change();
+            $("#language select").val(getCookie("language")).change();
 
             function ReloadContent() {
-                if (document.cookie == "Dutch")
+                if (getCookie("language") == "Dutch")
                     $("#text").html("Kennis van vreemde talen is nodig en prettig. Als u een beslissing over de studie van een vreemde taal gemaakt hebt dan bent u op de juiste weg. <br /> Wij hebben deze website gecreëerd voor mensen  die een nieuwe taal willen leren of voor die hun taalvaardigheden wensen te verbeteren. Wij spreken hier over Duits, Engels, Nederlands en Russisch. <br /> Lessen op Skype geven is  de beste en meest moderne formule voor het opbouwen van nieuwe taalkennis. Interactive communicatie met de lesgever, individuele benadering volgens uw behoeften en vermogen, flexibiliteit in  betaling en in leermomenten. U hebt uw  privé leerkracht, u blijft  thuis of in uw eigen omgeving, tijd en verkeerskosten  besparing.<br /><br /> Ik geef  les: Russisch, Engels, Nederlands <br /> Ik spreek: Russisch(moedertaal), Engels, Nederlands");
-                else if (document.cookie == "English")
+                else if (getCookie("language") == "English")
                     $("#text").html("Knowing foreign languages is necessary and pleasant. If you have made a firm decision of studying a language – you are on the right way. <br /> We’ve created this website for people who want to start a new language or improve their language skills. Teaching on Skype is the best and modern formula of getting new knowledge. Interactive communication with a teacher, individual approach to your needs, flexibility in payment and in choice of working moments.<br /> You have your private teacher and you can stay at home, studying in your own environment, saving time and transport costs.<br /><br />I teach: Russian, English, Dutch <br /> I speak: Russian(native), English, Dutch");
-                else if (document.cookie == "Russian")
+                else if (getCookie("language") == "Russian")
                     $("#text").html("Знание иностранных языков необходимо и приятно. Если Вы приняли твердое решение начать изучение иностранного языка, Вы  на верном пути. Мы создали этот сайти для тех  ,кто хочет начать изучение иностранного языка или улучшить свои уже имеющиеся знания и навыки. Мы говорим об изучении немецкого, английского ,голландского  языков  и русского языка для иностранцев.  Преподавание по скайпу на сегодняшний день является  лучшим и самым современным  способом получения новых знаний . Интерактивное общение с преподавателем, индивидуальный подход к Вашим нуждам и способностям , гибкость в системе оплаты и выбора времени уроков. Вы работаете с  частным преподавателем, находясь у себя дома или в знакомой Вам обстановке, что позволяет Вам сэкономить  время и транспортные расходы.<br /><br />Я преподаю: русский (для иностранцев), английский, голландский <br />Я говорю: русский (родной язык),  английский, голландский");
             }
 
-            function setCookie(cvalue, exdays) {
+            function setCookie(cname, cvalue, exdays) {
                 var d = new Date();
                 d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
                 var expires = "expires=" + d.toGMTString();
-                document.cookie = cvalue + "; " + expires;
+                if (document.domain === 'localhost') {
+                    document.cookie = cname + "=" + cvalue + "; " + expires + ';path=/;';
+                } else {
+                    document.cookie = cname + "=" + cvalue + "; " + expires + ';domain=.' + document.domain + ';path=/;';
+                }
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1);
+                    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+                }
+                return "";
             }
         });
-
-
-
     </script>
 </body>
 </html>
