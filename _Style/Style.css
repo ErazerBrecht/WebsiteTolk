@@ -99,25 +99,24 @@ body {
     padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
-    box-sizing : border-box;
+    box-sizing: border-box;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#sideImg
-{
+#sideImg {
     float: right;
     margin-top: 70px;
     padding-left: 30px;
-    padding-right: 10px
+    padding-right: 10px;
 }
 
 #footer {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 100%;
-    box-sizing : border-box;
+    box-sizing: border-box;
     background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -127,15 +126,14 @@ body {
     line-height: 33px;
 }
 
-#footer span
-{
-      vertical-align: middle;
-      line-height: normal; 
-}
+    #footer span {
+        vertical-align: middle;
+        line-height: normal;
+    }
 
 #language {
     vertical-align: middle;
-    float : right;
+    float: right;
 }
 
     #language select {
@@ -150,4 +148,17 @@ body {
     max-width: 100%;
     margin: 0 auto;
     margin-top: 15px;
+}
+
+/*Responsive*/
+
+@media screen and (max-width: 808px) {
+    .Hide {
+        visibility: hidden;
+    }
+
+    #text li
+    {
+        margin-bottom: 10px;
+    }
 }
