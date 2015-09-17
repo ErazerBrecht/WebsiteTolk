@@ -105,6 +105,14 @@ body {
     margin-right: auto;
 }
 
+#sideImg
+{
+    float: right;
+    margin-top: 70px;
+    padding-left: 30px;
+    padding-right: 10px
+}
+
 #footer {
     margin-top: 20px;
     margin-bottom: 20px;
