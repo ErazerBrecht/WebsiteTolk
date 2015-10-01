@@ -1,17 +1,18 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Brecht Carlier</title>
+    <title>Alternative Language School</title>
     <link href="../_Style/Style.css" rel="stylesheet" type="text/css" />
     <link href="../_Style/dd.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="../_js/jquery.dd.min.js"></script>
+    <script src="../_js/ChangeLanguage.js"></script>
     <div id="Site">
         <div id="Logo">
-            <h1>Mennes</h1>
-            <h4><i id="oTitel">Teacher Russian</i></h4>
+            <h1 id="Titel">Language School ‘Alternative’</h1>
+            <h4><i id="oTitel">Elena Mennes - Teacher <br /> Russian / English / Dutch</i></h4>
         </div>
 
         <div id="Nav">
@@ -70,22 +71,16 @@
             $("#language select").val(getCookie("language")).change();
 
             function ReloadContent() {
-                if (getCookie("language") == "Dutch") {
-                    $("#text").html("<h1>Onder constructie</h1> <p> Kom later nog eens terug om informatie over mijn collega's te vinden.</p>");               
-                    $("#AboutTab").html("Over mezelf");
-                    $("#OtherTab").html("Mijn collega's");
-                    $("#LessonTab").html("De lessen");
-                    $("#oTitel").html("Leerkracht Russisch");
+                var lang = getCookie("language");
+                if (lang == "Dutch") {             
+                    ChangeLanguage(lang, "<h1>Onder constructie</h1> <p> Kom later nog eens terug om informatie over mijn collega's te vinden.</p>")
                 }
-                else if (getCookie("language") == "English") {
-                    $("#text").html("<h1>Under construction</h1> <p> Please check later for other teachers! </p>");
-                    $("#AboutTab").html("About myself");
-                    $("#OtherTab").html("Other teachers");
-                    $("#LessonTab").html("Lessons");
-                    $("#oTitel").html("Teacher Russian");
+                else if (lang == "English") {
+                   ChangeLanguage(lang, "<h1>Under construction</h1> <p> Please check later for other teachers! </p>");
+
                 }
-                else if (getCookie("language") == "Russian")
-                    $("#text").html("<h1>Under construction</h1> <p> Please check later for other teachers! </p>");
+                else if (lang == "Russian")
+                    ChangeLanguage(lang, "<h1>на доработке</h1> <p>  просмотрите , пожалуйста ,страницу другие преподаватели позже! </p>");
             }
 
             function setCookie(cname, cvalue, exdays) {

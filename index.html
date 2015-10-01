@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Brecht Carlier</title>
+    <title>Alternative Language School</title>
     <link href="_Style/Style.css" rel="stylesheet" type="text/css" />
     <link href="_Style/Slideshow.css" rel="stylesheet" type="text/css" />
     <link href="_Style/dd.css" rel="stylesheet" type="text/css" />
@@ -10,10 +10,11 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="_js/jquery.slides.min.js"></script>
     <script src="_js/jquery.dd.min.js"></script>
+    <script src="../_js/ChangeLanguage.js"></script>
     <div id="Site">
         <div id="Logo">
-            <h1>Mennes</h1>
-            <h4><i id="oTitel">Teacher Russian</i></h4>
+            <h1 id="Titel">Language School ‘Alternative’</h1>
+            <h4><i id="oTitel">Elena Mennes - Teacher <br /> Russian / English / Dutch</i></h4>
         </div>
 
         <div id="Nav">
@@ -93,22 +94,15 @@
             $("#language select").val(getCookie("language")).change();
 
             function ReloadContent() {
-                if (getCookie("language") == "Dutch") {
-                    $("#text").html("Kennis van vreemde talen is nodig en prettig. Als u een beslissing over de studie van een vreemde taal gemaakt hebt dan bent u op de juiste weg. <br /> Wij hebben deze website gecreëerd voor mensen  die een nieuwe taal willen leren of voor die hun taalvaardigheden wensen te verbeteren. Wij spreken hier over Duits, Engels, Nederlands en Russisch. <br /> Lessen op Skype geven is  de beste en meest moderne formule voor het opbouwen van nieuwe taalkennis. Interactive communicatie met de lesgever, individuele benadering volgens uw behoeften en vermogen, flexibiliteit in  betaling en in leermomenten. U hebt uw  privé leerkracht, u blijft  thuis of in uw eigen omgeving, tijd en verkeerskosten  besparing.<br /><br /> Ik geef  les: Russisch, Engels, Nederlands <br /> Ik spreek: Russisch(moedertaal), Engels, Nederlands");
-                    $("#AboutTab").html("Over mezelf");
-                    $("#OtherTab").html("Mijn collega's");
-                    $("#LessonTab").html("De lessen");
-                    $("#oTitel").html("Leerkracht Russisch");
+                var lang = getCookie("language");
+                if (lang == "Dutch") {
+                    ChangeLanguage(lang, "Kennis van vreemde talen is nodig en prettig. Als u een beslissing over de studie van een vreemde taal gemaakt hebt dan bent u op de juiste weg. <br /> Wij hebben deze website gecreëerd voor mensen  die een nieuwe taal willen leren of voor die hun taalvaardigheden wensen te verbeteren. Wij spreken hier over Duits, Engels, Nederlands en Russisch. <br /> Lessen op Skype geven is  de beste en meest moderne formule voor het opbouwen van nieuwe taalkennis. Interactive communicatie met de lesgever, individuele benadering volgens uw behoeften en vermogen, flexibiliteit in  betaling en in leermomenten. U hebt uw  privé leerkracht, u blijft  thuis of in uw eigen omgeving, tijd en verkeerskosten  besparing.<br /><br /> Ik geef  les: Russisch, Engels, Nederlands <br /> Ik spreek: Russisch(moedertaal), Engels, Nederlands");
                 }
-                else if (getCookie("language") == "English") {
-                    $("#text").html("Knowing foreign languages is necessary and pleasant. If you have made a firm decision of studying a language – you are on the right way. <br /> We’ve created this website for people who want to start a new language or improve their language skills. Teaching on Skype is the best and modern formula of getting new knowledge. Interactive communication with a teacher, individual approach to your needs, flexibility in payment and in choice of working moments.<br /> You have your private teacher and you can stay at home, studying in your own environment, saving time and transport costs.<br /><br />I teach: Russian, English, Dutch <br /> I speak: Russian(native), English, Dutch");
-                    $("#AboutTab").html("About myself");
-                    $("#OtherTab").html("Other teachers");
-                    $("#LessonTab").html("Lessons");
-                    $("#oTitel").html("Teacher Russian");
+                else if (lang == "English") {
+                    ChangeLanguage(lang, "Knowing foreign languages is necessary and pleasant. If you have made a firm decision of studying a language – you are on the right way. <br /> We’ve created this website for people who want to start a new language or improve their language skills. Teaching on Skype is the best and modern formula of getting new knowledge. Interactive communication with a teacher, individual approach to your needs, flexibility in payment and in choice of working moments.<br /> You have your private teacher and you can stay at home, studying in your own environment, saving time and transport costs.<br /><br />I teach: Russian, English, Dutch <br /> I speak: Russian(native), English, Dutch");
                 }
-                else if (getCookie("language") == "Russian")
-                    $("#text").html("Знание иностранных языков необходимо и приятно. Если Вы приняли твердое решение начать изучение иностранного языка, Вы  на верном пути. Мы создали этот сайти для тех  ,кто хочет начать изучение иностранного языка или улучшить свои уже имеющиеся знания и навыки. Мы говорим об изучении немецкого, английского ,голландского  языков  и русского языка для иностранцев.  Преподавание по скайпу на сегодняшний день является  лучшим и самым современным  способом получения новых знаний . Интерактивное общение с преподавателем, индивидуальный подход к Вашим нуждам и способностям , гибкость в системе оплаты и выбора времени уроков. Вы работаете с  частным преподавателем, находясь у себя дома или в знакомой Вам обстановке, что позволяет Вам сэкономить  время и транспортные расходы.<br /><br />Я преподаю: русский (для иностранцев), английский, голландский <br />Я говорю: русский (родной язык),  английский, голландский");
+                else if (lang == "Russian")
+                    ChangeLanguage(lang, "Знание иностранных языков необходимо и приятно. Если Вы приняли твердое решение начать изучение иностранного языка, Вы  на верном пути. Мы создали этот сайти для тех  ,кто хочет начать изучение иностранного языка или улучшить свои уже имеющиеся знания и навыки. Мы говорим об изучении немецкого, английского ,голландского  языков  и русского языка для иностранцев.  Преподавание по скайпу на сегодняшний день является  лучшим и самым современным  способом получения новых знаний . Интерактивное общение с преподавателем, индивидуальный подход к Вашим нуждам и способностям , гибкость в системе оплаты и выбора времени уроков. Вы работаете с  частным преподавателем, находясь у себя дома или в знакомой Вам обстановке, что позволяет Вам сэкономить  время и транспортные расходы.<br /><br />Я преподаю: русский (для иностранцев), английский, голландский <br />Я говорю: русский (родной язык),  английский, голландский");
             }
 
             function setCookie(cname, cvalue, exdays) {
