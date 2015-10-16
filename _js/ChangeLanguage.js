@@ -23,7 +23,7 @@
             $("#text").html(content);
             $("#HomeTab").html("главная страница");
             $("#AboutTab").html("о себе");
-            //$("#OtherTab").html("другие преподаватели");
+            $("#OtherTab").html("другие преподаватели");
             $("#LessonTab").html("уроки");
             $("#Titel").html("языковая школа ‘Альтернатива’");
             $("#oTitel").html("Елена Меннес - преподаватель иностранных  языков <br /> Russian / English / Dutch");
