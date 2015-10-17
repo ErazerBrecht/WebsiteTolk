@@ -70,19 +70,19 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="_media/Home1.jpg">
+                        <img src="media/Home1.jpg">
                     </div>
 
                     <div class="item">
-                        <img src="_media/Home2.jpg">
+                        <img src="media/Home2.jpg">
                     </div>
 
                     <div class="item">
-                        <img src="_media/Home3.jpg">
+                        <img src="media/Home3.jpg">
                     </div>
 
                     <div class="item">
-                        <img src="_media/Home4.jpg">
+                        <img src="media/Home4.jpg">
                     </div>
                 </div>
 
@@ -103,9 +103,9 @@
                 <span class="center">&copy;&nbsp;Elena Mennes &nbsp; &nbsp; &nbsp;2015 &nbsp; &nbsp; &nbsp;</span>
                 <div class="pull-right" id="language">
                     <select>
-                        <option value="English" data-image="_media/flags/gb.png">English</option>
-                        <option value="Dutch" data-image="_media/flags/be.png">Dutch</option>
-                        <option value="Russian" data-image="_media/flags/ru.png">Russian</option>
+                        <option value="English" data-image="media/flags/gb.png">English</option>
+                        <option value="Dutch" data-image="media/flags/be.png">Dutch</option>
+                        <option value="Russian" data-image="media/flags/ru.png">Russian</option>
                     </select>
                 </div>
             </div>
@@ -124,25 +124,6 @@
             //Language selector
             $("#language select").msDropDown();
 
-            $("#language select").change(function () {
-                setCookie("language", $(this).val(), 31);
-                ReloadContent();
-            });
-
-            $("#language select").val(getCookie("language")).change();
-
-            function ReloadContent() {
-                var lang = getCookie("language");
-                if (lang == "Dutch") {
-                    ChangeLanguage(lang, "Kennis van vreemde talen is nodig en prettig. Als u een beslissing over de studie van een vreemde taal gemaakt hebt dan bent u op de juiste weg. <br /> Wij hebben deze website gecreëerd voor mensen  die een nieuwe taal willen leren of voor die hun taalvaardigheden wensen te verbeteren. Wij spreken hier over Duits, Engels, Nederlands en Russisch. <br /> Lessen op Skype geven is  de beste en meest moderne formule voor het opbouwen van nieuwe taalkennis. Interactive communicatie met de lesgever, individuele benadering volgens uw behoeften en vermogen, flexibiliteit in  betaling en in leermomenten. U hebt uw  privé leerkracht, u blijft  thuis of in uw eigen omgeving, tijd en verkeerskosten  besparing.<br /><br /> <b>Ik geef les: Russisch, Engels, Nederlands</b> <br /> Ik spreek: Russisch (moedertaal), Engels, Nederlands");
-                }
-                else if (lang == "English") {
-                    ChangeLanguage(lang, "Knowing foreign languages is necessary and pleasant. If you have made a firm decision of studying a language – you are on the right way. <br /> We’ve created this website for people who want to start a new language or improve their language skills. Teaching on Skype is the best and modern formula of getting new knowledge. Interactive communication with a teacher, individual approach to your needs, flexibility in payment and in choice of working moments.<br /> You have your private teacher and you can stay at home, studying in your own environment, saving time and transport costs.<br /><br /><b>I teach: Russian, English, Dutch</b> <br /> I speak: Russian (native), English, Dutch");
-                }
-                else if (lang == "Russian")
-                    ChangeLanguage(lang, "Знание иностранных языков необходимо и приятно. Если Вы приняли твердое решение начать изучение иностранного языка, Вы  на верном пути. Мы создали этот сайти для тех  ,кто хочет начать изучение иностранного языка или улучшить свои уже имеющиеся знания и навыки. Мы говорим об изучении немецкого, английского ,голландского  языков  и русского языка для иностранцев.  Преподавание по скайпу на сегодняшний день является  лучшим и самым современным  способом получения новых знаний . Интерактивное общение с преподавателем, индивидуальный подход к Вашим нуждам и способностям , гибкость в системе оплаты и выбора времени уроков. Вы работаете с  частным преподавателем, находясь у себя дома или в знакомой Вам обстановке, что позволяет Вам сэкономить  время и транспортные расходы.<br /><br /><b>Я преподаю: русский (для иностранцев), английский, голландский</b> <br />Я говорю: русский (родной язык),  английский, голландский");
-            }
-
             function setCookie(cname, cvalue, exdays) {
                 var d = new Date();
                 d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -159,11 +140,30 @@
                 var ca = document.cookie.split(';');
                 for (var i = 0; i < ca.length; i++) {
                     var c = ca[i];
-                    while (c.charAt(0) == ' ') c = c.substring(1);
-                    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+                    while (c.charAt(0) === ' ') c = c.substring(1);
+                    if (c.indexOf(name) === 0) return c.substring(name.length, c.length);
                 }
                 return "";
             }
+
+            function reloadContent() {
+                var lang = getCookie("language");
+                if (lang === "Dutch") {
+                    ChangeLanguage(lang, "Kennis van vreemde talen is nodig en prettig. Als u een beslissing over de studie van een vreemde taal gemaakt hebt dan bent u op de juiste weg. <br /> Wij hebben deze website gecreëerd voor mensen  die een nieuwe taal willen leren of voor die hun taalvaardigheden wensen te verbeteren. Wij spreken hier over Duits, Engels, Nederlands en Russisch. <br /> Lessen op Skype geven is  de beste en meest moderne formule voor het opbouwen van nieuwe taalkennis. Interactive communicatie met de lesgever, individuele benadering volgens uw behoeften en vermogen, flexibiliteit in  betaling en in leermomenten. U hebt uw  privé leerkracht, u blijft  thuis of in uw eigen omgeving, tijd en verkeerskosten  besparing.<br /><br /> <b>Ik geef les: Russisch, Engels, Nederlands</b> <br /> Ik spreek: Russisch (moedertaal), Engels, Nederlands");
+                }
+                else if (lang === "English") {
+                    ChangeLanguage(lang, "Knowing foreign languages is necessary and pleasant. If you have made a firm decision of studying a language – you are on the right way. <br /> We’ve created this website for people who want to start a new language or improve their language skills. Teaching on Skype is the best and modern formula of getting new knowledge. Interactive communication with a teacher, individual approach to your needs, flexibility in payment and in choice of working moments.<br /> You have your private teacher and you can stay at home, studying in your own environment, saving time and transport costs.<br /><br /><b>I teach: Russian, English, Dutch</b> <br /> I speak: Russian (native), English, Dutch");
+                }
+                else if (lang === "Russian")
+                    ChangeLanguage(lang, "Знание иностранных языков необходимо и приятно. Если Вы приняли твердое решение начать изучение иностранного языка, Вы  на верном пути. Мы создали этот сайти для тех  ,кто хочет начать изучение иностранного языка или улучшить свои уже имеющиеся знания и навыки. Мы говорим об изучении немецкого, английского ,голландского  языков  и русского языка для иностранцев.  Преподавание по скайпу на сегодняшний день является  лучшим и самым современным  способом получения новых знаний . Интерактивное общение с преподавателем, индивидуальный подход к Вашим нуждам и способностям , гибкость в системе оплаты и выбора времени уроков. Вы работаете с  частным преподавателем, находясь у себя дома или в знакомой Вам обстановке, что позволяет Вам сэкономить  время и транспортные расходы.<br /><br /><b>Я преподаю: русский (для иностранцев), английский, голландский</b> <br />Я говорю: русский (родной язык),  английский, голландский");
+            }
+
+            $("#language select").change(function () {
+                setCookie("language", $(this).val(), 31);
+                reloadContent();
+            });
+
+            $("#language select").val(getCookie("language")).change();
         });
     </script>
 </body>
