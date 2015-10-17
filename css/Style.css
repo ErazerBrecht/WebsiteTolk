@@ -1,0 +1,55 @@
+﻿body {
+    background-color: #ededed;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+    background-color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 12px 12px 0px 0px;
+}
+
+.gap {
+    margin-top: 30px !important;
+}
+
+.container section {
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 0px 0px 12px 12px;
+}
+
+@media (min-width: 768px) {
+    footer {
+        padding: 10px 40px 10px 40px;
+    }
+
+    .gap {
+        margin-top: 50px !important;
+    }
+
+    .container section {
+        background-color: white;
+        padding: 20px 40px 20px 40px;
+    }
+}
+
+.jumbotron {
+    background: #1f567d;
+    color: white;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.center {
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 7px;
+}
+
+#language select {
+    width: 110px;
+}
