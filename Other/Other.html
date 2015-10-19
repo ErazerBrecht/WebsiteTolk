@@ -1,87 +1,84 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Alternative Language School</title>
-    <link href="../_Style/Style.css" rel="stylesheet" type="text/css" />
-    <link href="../_Style/dd.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../css/navbar.css" rel="stylesheet" type="text/css" />
+    <link href="../css/dd.css" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="../_js/jquery.dd.min.js"></script>
-    <script src="../_js/ChangeLanguage.js"></script>
-    <div id="Site">
-        <div id="Logo">
-            <h1 id="Titel">Language School ‘Alternative’</h1>
+    <div class="jumbotron">
+        <div class="container-fluid text-center">
+            <h2 id="Titel">Language School ‘Alternative’</h2>
             <h4><i id="oTitel">Elena Mennes - Teacher <br /> Russian / English / Dutch</i></h4>
         </div>
-
-        <div id="Nav">
-            <ul class="Hoofd">
-
-                <li>
-                    <a href="../index.html" id="HomeTab">Home</a>
-                </li>
-
-                <li>
-                    <a href="../About Me/AboutMe.html" id="AboutTab">About myself</a>
-                </li>
-
-                <li class="Active">
-                    <a href="#" id="OtherTab">Other teachers</a>
-                </li>
-
-                <li>
-                    <a href="../Lessons/Lessons.html" id="LessonTab">Lessons</a>
-                </li>
-            </ul>
-        </div>
-
-        <div id="container">
-            <div id="content">
-                <div id="text">
-                    <h1>Under construction</h1>
-                    <p>
-                        Please check later for other teachers!
-                    </p>
-                </div>
-            </div>
-
-            <div id="footer">
-                <span>&copy; Mennes &nbsp; &nbsp; &nbsp;2015 &nbsp; &nbsp; &nbsp;</span>
-                <div id="language">
-                    <select>
-                        <option value="English" data-image="../_media/flags/gb.png">English</option>
-                        <option value="Dutch" data-image="../_media/flags/be.png">Dutch</option>
-                        <option value="Russian" data-image="../_media/flags/ru.png">Russian</option>
-                    </select>
-                </div>
-            </div>
-        </div>
     </div>
+
+    <header class="navbar-inverse bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav class="navbar-collapse bs-navbar-collapse collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../index.html" id="HomeTab">Home</a>
+                    <li>
+                        <a href="../AboutMe/AboutMe.html" id="AboutTab">About myself</a>
+                    <li class="active">
+                        <a href="#" id="OtherTab">Other teachers</a>
+                    <li>
+                        <a href="../Lessons/Lessons.html" id="LessonTab">Lessons</a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container">
+        <section class="row">
+            <div id="text">
+                <h1>Under construction</h1>
+                <p>
+                    Please check later for other teachers!
+                </p>
+            </div>
+        </section>
+
+        <footer class="gap row">
+            <span class="center">&copy;&nbsp;Elena Mennes &nbsp; &nbsp; &nbsp;2015 &nbsp; &nbsp; &nbsp;</span>
+            <div class="pull-right" id="language">
+                <select>
+                    <option value="English" data-image="../media/flags/gb.png">English</option>
+                    <option value="Dutch" data-image="../media/flags/be.png">Dutch</option>
+                    <option value="Russian" data-image="../media/flags/ru.png">Russian</option>
+                </select>
+            </div>
+        </footer>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.dd.min.js"></script>
+    <script src="../js/ChangeLanguage.js"></script>
+
     <script>
         $(function () {
             //Language selector
             $("#language select").msDropDown();
-
-            $("#language select").change(function () {
-                setCookie("language", $(this).val(), 31);
-                ReloadContent();
-            });
-
-            $("#language select").val(getCookie("language")).change();
-
-            function ReloadContent() {
-                var lang = getCookie("language");
-                if (lang == "Dutch") {             
-                    ChangeLanguage(lang, "<h1>Onder constructie</h1> <p> Kom later nog eens terug om informatie over mijn collega's te vinden.</p>")
-                }
-                else if (lang == "English") {
-                   ChangeLanguage(lang, "<h1>Under construction</h1> <p> Please check later for other teachers! </p>");
-
-                }
-                else if (lang == "Russian")
-                    ChangeLanguage(lang, "<h1>на доработке</h1> <p>  просмотрите , пожалуйста ,страницу другие преподаватели позже! </p>");
-            }
 
             function setCookie(cname, cvalue, exdays) {
                 var d = new Date();
@@ -104,6 +101,26 @@
                 }
                 return "";
             }
+
+            function reloadContent() {
+                var lang = getCookie("language");
+                if (lang == "Dutch") {
+                    ChangeLanguage(lang, "<h1>Onder constructie</h1> <p> Kom later nog eens terug om informatie over mijn collega's te vinden.</p>")
+                }
+                else if (lang == "English") {
+                    ChangeLanguage(lang, "<h1>Under construction</h1> <p> Please check later for other teachers! </p>");
+
+                }
+                else if (lang == "Russian")
+                    ChangeLanguage(lang, "<h1>на доработке</h1> <p>  просмотрите , пожалуйста ,страницу другие преподаватели позже! </p>");
+            }
+
+            $("#language select").change(function () {
+                setCookie("language", $(this).val(), 31);
+                reloadContent();
+            });
+
+            $("#language select").val(getCookie("language")).change();
         });
     </script>
 </body>
